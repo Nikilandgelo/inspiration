@@ -62,7 +62,7 @@ function showing_prompt(event)
     prompt_scroll.style.animation = "appear_prompt_scroll 3s forwards";
 
     var image_scroll = document.createElement("img");
-    image_scroll.src = "/images/icon_scroll.svg";
+    image_scroll.src = "./images/icon_scroll.svg";
     image_scroll.style.minWidth = "10%";
     image_scroll.style.minHeight = "10%";
     prompt_scroll.appendChild(image_scroll);
