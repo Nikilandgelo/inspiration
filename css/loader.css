@@ -1,0 +1,179 @@
+#loader
+{
+    width: 100%;
+    height: 100%;
+    background-color: #D2A813;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+@keyframes hide_loader
+{
+    0%
+    {
+        background-color: #D2A813;
+        opacity: 1;
+    }
+    50%
+    {
+        background-color: #D2A813;
+        opacity: 1;
+    }
+    100%
+    {
+        background-color: white;
+        opacity: 0;
+    }    
+}
+#loader_logo
+{
+    width: 10%;
+    padding-bottom: 1%;
+}
+#loader_logo .global_path
+{
+    fill: transparent;
+    stroke-dasharray: 50%;
+    stroke-dashoffset: 50%;
+    animation: drawing_loader_global 2s infinite;
+}
+@keyframes drawing_loader_global
+{
+    0%
+    {
+        stroke-dashoffset: 50%;
+        fill: transparent;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: -50%;
+        fill: transparent;
+    }
+}
+@keyframes hiding_loader_global
+{
+    0%
+    {
+        stroke-dashoffset: 50%;
+        fill: transparent;
+    }
+    25%
+    {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+    100%
+    {
+        stroke-dashoffset: -50%;
+        fill: transparent;
+    }
+}
+#loader_logo .wings_path
+{
+    fill: transparent;
+    stroke-dasharray: 580%;
+    stroke-dashoffset: 580%;
+    animation: drawing_loader_wings 2s infinite;
+}
+@keyframes drawing_loader_wings
+{
+    0%
+    {
+        stroke-dashoffset: 580%;
+        fill: transparent;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: -580%;
+        fill: transparent;
+    }
+}
+@keyframes hiding_loader_wings
+{
+    0%
+    {
+        stroke-dashoffset: 580%;
+        fill: transparent;
+    }
+    25%
+    {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+    100%
+    {
+        stroke-dashoffset: -580%;
+        fill: transparent;
+    }
+}
+#loader_logo .bottom_path
+{
+    fill: transparent;
+    stroke-dasharray: 250%;
+    stroke-dashoffset: 250%;
+    animation: drawing_loader_bottom 2s infinite;
+}
+@keyframes drawing_loader_bottom
+{
+    0%
+    {
+        stroke-dashoffset: 250%;
+        fill: transparent;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100%
+    {
+        stroke-dashoffset: -250%;
+        fill: transparent;
+    }
+}
+@keyframes hiding_loader_bottom
+{
+    0%
+    {
+        stroke-dashoffset: 250%;
+        fill: transparent;
+    }
+    25%
+    {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+    100%
+    {
+        stroke-dashoffset: -250%;
+        fill: transparent;
+    }
+}
