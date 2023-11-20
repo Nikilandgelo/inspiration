@@ -8,9 +8,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-left: calc((0.2vw + 0.2vh)/2) solid white;
+    border-top-left-radius: calc((4vw + 4vh)/2);
+    border-bottom-left-radius: calc((4vw + 4vh)/2);
+    border-left: calc((0.2vw + 0.2vh)/2) solid var(--main_color);
     backdrop-filter: blur(50px);
 }
 .roadmap_title
@@ -34,13 +34,42 @@
 }
 .roadmap_bulb
 {
-    width: 15%;
-    height: 45%;
+    width: 20%;
+    height: 35%;
     cursor: pointer;
+}
+.lines_inner_bulb
+{
+    fill: var(--main_color);
+    transition: 1s ease;
+}
+.current_lines
+{
+    fill: var(--main_color_transparent);
+}
+.bulb_filler
+{
+    fill: transparent;
+    stroke: var(--main_color);
+    stroke-width: 0%;  
+    transition: 1s ease;
+}
+.current_fill
+{
+    stroke-width: 150%;
+}
+.roadmap_bulb:hover .lines_inner_bulb
+{
+    fill: var(--main_color_transparent);
+}
+.roadmap_bulb:hover .bulb_filler
+{
+    stroke-width: 150%;
 }
 .roadmap_text
 {
     font-size: calc((1.25vw + 1.25vh)/2);
+    font-weight: 300;
     cursor: pointer;
 }
 .space_for_lines
@@ -50,4 +79,17 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
+}
+.roadmap_lines
+{
+    fill: transparent;
+    stroke-width: 1%;
+    stroke-dasharray: 1.5%;
+    transition: stroke 1s ease;
+    stroke: var(--main_color_inactive);
+}
+.roadmap_passed_lines
+{
+    stroke: var(--main_color);
 }

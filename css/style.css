@@ -1,6 +1,12 @@
 :root
 {
     --current_playing_state: paused;
+    --background_color: rgb(59, 45, 65);                            /* цвет гармонирующий с контрастным, который зачастую будет фоном + иногда текстом на фоне конраста */
+    --background_color_end_gradient: rgb(42, 32, 46);               /* когда градиент на текст с цветом бекграунда */
+    --main_color: rgba(220, 218, 221, 1);                           /* оттенок бэкграунд цвета ближе к белому для текста */
+    --main_color_transparent: rgba(220, 218, 221, 0);               /* для линий ламп в roadmap когда заливка появляется */
+    --main_color_inactive: rgba(151, 144, 154, 0.5);                /* для непройденных линий пути в roadmap оттенок серее + альфа канал  */
+    --contrast_color: rgb(247, 176, 26);                            /* цвет привлечения внимания исходя из тематики (в данном случае названия) */
 }
 html
 {
@@ -18,8 +24,9 @@ img
 p
 {
     margin: 0;
-    color: white;
-    font-family: 'Poiret One', cursive;
+    color: var(--main_color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
     font-size: calc((2vw + 2vh)/2);
     text-align: center;
     word-wrap: break-word;
@@ -28,29 +35,73 @@ ul
 {
     margin: 0;
     padding: 0;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Montserrat', sans-serif;
     list-style: none;
 }
 a
 {
     text-decoration: none;
 }
-section
+.pages
 {
     width: 100%;
     height: 100%;
+    position: relative;
 }
-#courses_background
+.pages_overlaying_content
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-#overlap
+.blackout_div
 {
     width: 100%;
     height: 100%;
-    position: relative;
-    top: -100%;
-    background-color: rgb(0,0,0,0.85);
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.pages_content
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.reveal_content
+{
+    animation: reveal 2s forwards;
+}
+.first_reveal
+{
+    animation: reveal 2s 3s forwards;                           /* 3s delay из-за лоадера */
+}
+@keyframes reveal
+{
+    0%
+    {
+        transform: translateY(25%);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.page_title
+{
+    position: absolute;
+    top: 12%;
+    font-size: calc((6vw + 6vh)/2);
+    font-weight: 600;
+    background-image: linear-gradient(90deg, var(--contrast_color) 0%, var(--main_color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

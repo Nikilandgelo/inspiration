@@ -9,9 +9,9 @@
     align-items: center;
     box-sizing: border-box;
     padding-left: 1%;
-    border-bottom-right-radius: 50px;
-    border-right: calc((0.2vw + 0.2vh)/2) solid white;
-    border-bottom: calc((0.2vw + 0.2vh)/2) solid white;
+    border-bottom-right-radius: calc((4vw + 4vh)/2);
+    border-right: calc((0.2vw + 0.2vh)/2) solid var(--main_color);
+    border-bottom: calc((0.2vw + 0.2vh)/2) solid var(--main_color);
     backdrop-filter: blur(50px);
 }
 #logo
@@ -22,81 +22,9 @@
 }
 .logo_path
 {
-    stroke: white;
+    stroke: var(--main_color);
     stroke-width: calc((0.5vw + 0.5vh)/2);
-    fill: white;
-}
-#logo:hover .global_path
-{
-    stroke-dasharray: 50%;
-    stroke-dashoffset: 50%;
-    animation: drawing_global_path 2s forwards;
-}
-@keyframes drawing_global_path
-{
-    0%
-    {
-        stroke-dashoffset: 50%;
-        fill: transparent;
-    }
-    50%
-    {
-        stroke-dashoffset: 0;
-        fill: transparent;
-    }
-    100%
-    {
-        stroke-dashoffset: 0;
-        fill: white;
-    }
-}
-#logo:hover .wings_path
-{
-    stroke-dasharray: 580%;
-    stroke-dashoffset: 580%;
-    animation: drawing_wings_path 2s forwards;
-}
-@keyframes drawing_wings_path
-{
-    0%
-    {
-        stroke-dashoffset: 580%;
-        fill: transparent;
-    }
-    50%
-    {
-        stroke-dashoffset: 0;
-        fill: transparent;
-    }
-    100%
-    {
-        stroke-dashoffset: 0;
-        fill: white;
-    }
-}
-#logo:hover .bottom_path
-{
-    stroke-dasharray: 250%;
-    stroke-dashoffset: 250%;
-    animation: drawing_bottom_path 2s forwards;
-}
-@keyframes drawing_bottom_path
-{
-    0%
-    {
-        stroke-dashoffset: 250%;
-        fill: transparent;
-    }
-    50%
-    {
-        stroke-dashoffset: 0;
-        fill: transparent;
-    }
-    100%
-    {
-        stroke-dashoffset: 0;
-        fill: white;
-    }
+    fill: var(--main_color);
 }
 .header_hyperlinks
 {
@@ -118,27 +46,29 @@
 }
 .header_links p
 {
+    font-weight: 300;
     transition: color 1s ease;
 }
 .header_links:hover p
 {
-    color: black;
+    color: var(--background_color);
 }
 .header_icons
 {
     width: 0%;
     height: 0%;
+    padding-left: 5%;
     transition: 1s ease;
 }
 .contacts:hover .header_icons
 {
-    width: 22%;
-    height: 22%;
+    width: 20%;
+    height: 20%;
 }
 .FAQ:hover .header_icons
 {
-    width: 37%;
-    height: 37%;
+    width: 35%;
+    height: 35%;
 }
 .header_links::after
 {
@@ -150,7 +80,7 @@
     top: 100%;
     border-radius: 50%;
     z-index: -1;
-    background-color: white;
+    background-color: var(--main_color);
     transition: 1s ease;
 }
 .header_links:hover::after

@@ -1,31 +1,11 @@
-#background_video
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#main_overlap
-{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(0,0,0,0.85);
-}
 #season_year
 {
     position: absolute;
-    top: 12%;
+    top: 6%;
     width: calc((12vw + 12vh)/2);
     height: calc((12vw + 12vh)/2);
     border-radius: 50%;
-    backdrop-filter: blur(50px);
-    border: calc((0.2vw + 0.2vh)/2) solid white;
+    border: calc((0.2vw + 0.2vh)/2) solid var(--main_color);
     display: flex;
 }
 #icon_season_year
@@ -65,7 +45,7 @@
 }
 .text_season
 {
-    font-size: calc((0.85vw + 0.85vh)/2);
+    font-size: calc((0.75vw + 0.75vh)/2);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -78,13 +58,13 @@
 
 #pre_main_title
 {
-    font-size: calc((3.25vw + 3.25vh)/2);
+    font-size: calc((3.5vw + 3.5vh)/2);
 }
 #main_title_variation
 {
-    background-color: #D2A813;
+    background-color: var(--contrast_color);
     height: calc((11vw + 11vh)/2);
-    width: calc((38vw + 38vh)/2);
+    width: calc((47vw + 47vh)/2);
     margin-top: 1%;
     overflow: hidden;
     border-radius: 15px;
@@ -94,7 +74,7 @@
     height: calc((11vw + 11vh)/2);
     display: flex;
     align-items: center;
-    animation: hiding_up_text 2.8s steps(2) 1.5s forwards;
+    animation: hiding_up_text 2.8s steps(2) 1.5s forwards;                            /* 1.5s delay потому что анимация пропадания лоадера 3s, а на 50% он исчезает */
     animation-play-state: var(--current_playing_state);
 }
 @keyframes hiding_up_text 
@@ -108,22 +88,26 @@
 }
 .main_title
 {
-    color: black;
-    font-size: calc((8.5vw + 8.5vh)/2);
     position: relative;
+    font-size: calc((8vw + 8vh)/2);
+    font-weight: 600;
+    background-image: linear-gradient(90deg, var(--background_color) 0%, var(--background_color_end_gradient) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .main_title::before
 {
     content: "";
-    position: absolute;
+    background-color: var(--contrast_color);
     width: 100%;
     height: 100%;
+    position: absolute;
     left: 0;
-    border-left: 2px solid black;
+    border-left: 2px solid var(--background_color_end_gradient);
     animation: typing_text 1.2s steps(12, start) 4.3s 1 forwards, blink_cursor 1s 4.3s infinite;              /* 4.3s это delay, 1 это iteration-count  */
                                                                                                     /* 4.3s = 2.8s длительность + 1.5s delay (из-за лоадера)  */
     animation-play-state: var(--current_playing_state);
-    background-color: #D2A813;
 }
 .removable_title::before
 {
@@ -149,7 +133,7 @@
     }
     50%
     {
-        border-left-color:black; 
+        border-left-color: var(--background_color_end_gradient);
     }
     100%
     {
